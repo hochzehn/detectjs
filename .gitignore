@@ -2,4 +2,5 @@
 /.idea
 
 # External libraries
-/lib/vendor
+# We have to include some third-party files to use Dockerhub automated builds.
+/lib/vendor/johnmichel/Library-Detector-for-Chrome/libraries.original.js
