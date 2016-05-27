@@ -1,22 +1,9 @@
 # detectjs
 Detect JavaScript libraries used on any web page, in your CLI.
 
-## Installation
-
-You need to have Docker and Bash installed.
-
-Clone this repository:
-
-    git clone https://github.com/hochzehn/detectjs.git
-
-Install detection libraries by using
-
-    cd detectjs
-    bin/updateLibraries.sh
-
 ## Usage
 
-    bin/run.sh http://cnn.com/
+    docker run --rm hochzehn/detectjs http://cnn.com/
     
 gives
 
@@ -49,3 +36,6 @@ We mainly stick together amazing work done by these software craftsmen:
 - [Ariya Hidayat (ariya)](https://github.com/ariya) - [PhantomJS](https://github.com/ariya/phantomjs) and [JS library detection script](http://ariya.ofilabs.com/2013/07/detecting-js-libraries-versions.html)
 - [John Michel (johnmichel)](https://github.com/johnmichel) - [Library Detector for Chrome](https://github.com/johnmichel/Library-Detector-for-Chrome)
 
+## Update detection libraries
+
+    bin/updateLibraries.sh
