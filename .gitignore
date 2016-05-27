@@ -1,0 +1,5 @@
+# IDE
+/.idea
+
+# External libraries
+/lib/vendor
