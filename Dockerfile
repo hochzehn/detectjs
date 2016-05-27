@@ -1,4 +1,4 @@
-FROM phantomjs
+FROM wernight/phantomjs
 
 ADD . /app/
 
