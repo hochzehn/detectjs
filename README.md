@@ -47,5 +47,5 @@ gives
 We mainly stick together amazing work done by these software craftsmen:
 
 - [Ariya Hidayat (ariya)](https://github.com/ariya) - [PhantomJS](https://github.com/ariya/phantomjs) and [JS library detection script](http://ariya.ofilabs.com/2013/07/detecting-js-libraries-versions.html)
-- [John Michel (johnmichel)](https://github.com/johnmichel) - [Library Detector for Chrome](https://github.com/johnmichel/Library-Detector-for-Chrome/)
+- [John Michel (johnmichel)](https://github.com/johnmichel) - [Library Detector for Chrome](https://github.com/johnmichel/Library-Detector-for-Chrome)
 
