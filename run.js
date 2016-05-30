@@ -49,7 +49,7 @@ page.onInitialized = function() {
                 console.log(e);
                 phantom.exit();
             }
-        }, 2000);
+        }, 3000);
     };
 
     page.evaluate(function() {
