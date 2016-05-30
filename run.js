@@ -18,6 +18,7 @@ address = system.args[1];
 
 var resultDocument = {
     address: address,
+    finalAddress: "",
     date: Date.now(),
     javascript: {
         hasError: false,
@@ -39,11 +40,8 @@ page.onError = function(msg, trace) {
     // console.error(msgStack.join('\n'));
 };
 
-page.open(address, function (status) {
-    if (status !== 'success') {
-        // console.log('ERROR: Unable to load', address);
-        phantom.exit();
-    } else {
+page.onInitialized = function() {
+    page.onCallback = function() {
         setTimeout(function() {
             try {
                 detection(page, resultDocument);
@@ -52,5 +50,21 @@ page.open(address, function (status) {
                 phantom.exit();
             }
         }, 2000);
+    };
+
+    page.evaluate(function() {
+        window.addEventListener('load', function() {
+            window.callPhantom();
+        }, false);
+    });
+
+};
+
+page.open(address, function (status) {
+    if (status !== 'success') {
+        // console.log('ERROR: Unable to load', address);
+        phantom.exit();
+    } else {
+        resultDocument.finalAddress = page.url;
     }
 });
