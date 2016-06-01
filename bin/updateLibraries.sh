@@ -25,6 +25,8 @@ sed -i "s/version: 'N\/A'/version: ''/g" $TARGET_FILE
 ## 5. Create valid version numbers for other libraries
 sed -i "s/gwtVersion = 'Google Internal';/gwtVersion = '0.0.0-dev';/g" $TARGET_FILE
 sed -i "s/version: jq.fn.jquery /version: jq.fn.jquery.split(' ')[0]/g" $TARGET_FILE
+sed -i "s/bootstrapVersion = '>= 3.0.0 & <= 3.1.1'/bootstrapVersion = '3.0.*'/g" $TARGET_FILE
+sed -i "s/bootstrapVersion = '>= 2.0.0 & <= 2.3.2'/bootstrapVersion = '2.*'/g" $TARGET_FILE
 ## 6. Export named variable as module.exports to have it available.
 VAR_NAME=$(head -n 1 $TEMP_FILE | sed -e 's/var //' | sed -e 's/ = {//')
 echo "\nmodule.exports = $VAR_NAME;" >> $TARGET_FILE
