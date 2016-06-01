@@ -17,6 +17,13 @@ echo "// Source: https://github.com/johnmichel/Library-Detector-for-Chrome (MIT 
 cat "$TEMP_FILE" >> "$TARGET_FILE"
 ## 3. Remove parameter "win" for the test functions and set it inside instead.
 sed -i 's/test:.*/test: function() {\n            var win = window;/g' $TARGET_FILE
-## 4. Export named variable as module.exports to have it available.
+## 4. Unify return values for "unknown" version numbers - it should return '' in that case
+sed -i "s/version: 'unknown'/version: ''/g" $TARGET_FILE
+sed -i "s/gwtVersion = 'unknown'/gwtVersion = ''/g" $TARGET_FILE
+sed -i 's/version: "N\/A"/version: ""/g' $TARGET_FILE
+sed -i "s/version: 'N\/A'/version: ''/g" $TARGET_FILE
+## 5. Create valid version numbers for other libraries
+sed -i "s/gwtVersion = 'Google Internal';/gwtVersion = '0.0.0-dev';/g" $TARGET_FILE
+## 6. Export named variable as module.exports to have it available.
 VAR_NAME=$(head -n 1 $TEMP_FILE | sed -e 's/var //' | sed -e 's/ = {//')
 echo "\nmodule.exports = $VAR_NAME;" >> $TARGET_FILE
