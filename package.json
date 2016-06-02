@@ -1,0 +1,26 @@
+{
+  "name": "detectjs",
+  "version": "1.0.0",
+  "description": "Detect JavaScript libraries used on any web page.",
+  "main": "./lib/detectjs.js",
+  "preferGlobal": "true",
+  "bin": {
+    "detectjs": "./bin/detectjs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hochzehn/detectjs.git"
+  },
+  "author": "Jan Papenbrock <j.papenbrock@hochzehn.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hochzehn/detectjs/issues"
+  },
+  "homepage": "https://github.com/hochzehn/detectjs#readme",
+  "dependencies": {
+    "phantomjs-prebuilt": "^2.1.7"
+  }
+}
