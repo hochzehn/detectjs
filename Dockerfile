@@ -2,5 +2,5 @@ FROM wernight/phantomjs
 
 ADD . /app/
 
-ENTRYPOINT ["phantomjs", "/app/run.js"]
+ENTRYPOINT ["phantomjs", "/app/lib/detectjs.js"]
 CMD [""]
