@@ -1,6 +1,6 @@
 FROM wernight/phantomjs
 
-ADD . /app/
+ADD app/ /opt/app/
 
-ENTRYPOINT ["phantomjs", "/app/lib/detectjs.js"]
+ENTRYPOINT ["phantomjs", "/opt/app/lib/detectjs.js"]
 CMD [""]
