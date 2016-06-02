@@ -6,7 +6,9 @@ WORKDIR /opt/app
 ADD package.json /opt/app/
 RUN npm install
 
-ADD app/ /opt/app/
+ADD . /opt/app/
+RUN npm install
+RUN npm link
 
-ENTRYPOINT ["node", "run.js"]
+ENTRYPOINT ["detectjs"]
 CMD [""]

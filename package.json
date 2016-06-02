@@ -2,7 +2,11 @@
   "name": "detectjs",
   "version": "1.0.0",
   "description": "Detect JavaScript libraries used on any web page.",
-  "main": "app/run.js",
+  "main": "./lib/detectjs.js",
+  "preferGlobal": "true",
+  "bin": {
+    "detectjs": "./bin/detectjs"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
